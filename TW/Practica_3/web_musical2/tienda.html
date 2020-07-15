@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>C.Tangana - Tienda</title>
+  </head>
+  <body>
+    <header>
+      <div align="center"><img src="./img/logo_ctangana.jpg" alt="Logo C.Tangana" width="300"/></div>
+      <!--<h1>C.Tangana</h1>-->
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+      <link rel="stylesheet" href="./css/estilo_base.css">
+    </header>
+
+    <nav class="estilo_base">
+      <p><a href="./principal.html"> Inicio</a></p>
+      <p><a href="./biografia.html"> Biografía</a></p>
+      <p><a href="./discografia.html"> Discografía</a></p>
+      <p><a href="./tienda.html"> Tienda</a></p>
+    </nav>
+    <hr/>
+
+    <article>
+      <section>
+        <fieldset>
+          <legend>Formulario de compra</legend>
+          <form action="./procesar.php" method="post">
+            <fieldset>
+              <legend>Producto a comprar</legend>
+              <p>Elige la canción o disco a comprar:</p>
+              <select name="producto">
+                <option selected>C.Tangana - Idolo</option>
+                <option>C.Tangana - LO▼E'S</option>
+                <option>C.Tangana - Antes de morirme (feat.Rosalia)</option>
+                <option>C.Tangana, Dellafuente - Guerrera</option>
+              </select>
+            </fieldset>
+
+            <fieldset>
+              <legend>Datos personales</legend>
+              <p>Nombre: <input type="text" name="nombre"/></p>
+              <p>Apellidos: <input type="text" name="apellidos"/></p>
+              <p>Edad: <input type="text" name="edad"/></p>
+              <p>Nº de Telefono: <input type="text" name="n_telefono"/></p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Datos de pago</legend>
+                Forma de pago:<br>
+                <input type="radio" name="forma_pago" value="pago_visa"/> VISA<br>
+                <input type="radio" name="forma_pago" value="pago_mastercard"/>  MasterCard<br>
+                <input type="radio" name="forma_pago" value="pago_paypal" checked/> PayPal<br>
+
+                <p>Numero de tarjeta o PayPal(email): <input type="text" name="n_tarjeta_paypal"/></p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Dirección de envío</legend>
+                <p>Provincia: <input type="text" name="provincia"/></p>
+                <p>Población: <input type="text" name="poblacion"/></p>
+                <p>Código postal: <input type="text" name="codigo_postal"/></p>
+                <p>Calle: <input type="text" name="calle"/></p>
+
+                ¿Quieres que te enviemos el producto como regalo? (Marca la casilla. OPCIONAL)<br>
+                <input type="checkbox" name="regalo" value="producto_regalo"/>ENVÍAMELO COMO REGALO<br>
+            </fieldset>
+            <p>
+              <input type="submit" value="Enviar datos"/>
+              <input type="reset" value="Limpiar formulario"/>
+             </p>
+        </fieldset>
+        </form>
+      </section>
+    </article>
+
+    <hr/>
+    <footer class="estilo_base">
+      <p><a href="./principal.html"> Inicio</a></p>
+      <p><a href="./biografia.html"> Biografía</a></p>
+      <p><a href="./discografia.html"> Discografía</a></p>
+      <p><a href="./tienda.html"> Tienda</a></p>
+    </footer>
+    <h6>Web by Raúl Ruano Narváez<h6>
+  </body>
+</html>

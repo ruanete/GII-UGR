@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}MUSICAL - Inicio{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+  <div class="container">
+    <h2>Nuevo grupo</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-success">Guardar grupo</button>
+    </form>
+  </div>
+{% endblock %}

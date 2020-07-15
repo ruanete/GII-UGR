@@ -1,0 +1,11 @@
+AMAZON:
+
+Buscar cada uno de los productos y sacar el número: <li id="result_[0-9]* y luego al resultado le aplicamos: [0-9]* y nos quedamos con los números y si cogemos el ultimo y le sumamos 1
+será el numero de productos encontrados en esa pagina.
+
+
+Buscar titulos de los productos con: <h2 data-attribute="([^"]*) y luego al resultado se le hace: "[^"]*" y nos quedamos con el titulo del producto
+
+Buscar precios de los productos con: <span class="a-size-base a-color-price s-price a-text-bold">(.*?)<\/span> y luego para quedarnos con el precio solo: [0-9]+([,][0-9]+)?
+
+Buscar imagenes: <img[^>]*>

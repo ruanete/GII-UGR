@@ -1,0 +1,281 @@
+
+
+*******************************************************************************
+Sun Jun 17 12:09:45 2018
+
+
+FIT:    data read from "Voraz.dat"
+        format = z
+        #datapoints = 50
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**2+b*x+c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.0021653957e+13   0.00e+00  2.58e+05    1.000000e+00   1.000000e+00   1.000000e+00
+   9 1.2624922836e-01  -1.93e-06  2.58e-04    4.790012e-06  -1.697317e-03   1.372247e-01
+
+After 9 iterations the fit converged.
+final sum of squares of residuals : 0.126249
+rel. change during last iteration : -1.93015e-11
+
+degrees of freedom    (FIT_NDF)                        : 47
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0518281
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00268615
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 4.79001e-06      +/- 9.844e-08    (2.055%)
+b               = -0.00169732      +/- 0.0001017    (5.989%)
+c               = 0.137225         +/- 0.022        (16.04%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.746 -0.866  1.000 
+
+
+*******************************************************************************
+Sun Jun 17 12:20:23 2018
+
+
+FIT:    data read from "BacktrackingBasico.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=gamma(N+1)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'x' is zero.
+
+
+*******************************************************************************
+Sun Jun 17 12:20:27 2018
+
+
+FIT:    data read from "BacktrackingBasico.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=gamma(N+1)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   N            
+   0 6.5541295429e+01   0.00e+00  4.23e-01    1.000000e+00
+   3 6.5330733519e+01  -8.37e-01  4.23e-02    4.750829e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 65.3307
+rel. change during last iteration : -8.3656e-06
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.33329
+variance of residuals (reduced chisquare) = WSSR/ndf   : 5.44423
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+N               = 0.475083         +/- 55.51        (1.168e+04%)
+
+
+*******************************************************************************
+Sun Jun 17 12:21:31 2018
+
+
+FIT:    data read from "BacktrackingBasico.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=gamma(a+1)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 6.5541286228e+01   0.00e+00  2.76e-06    4.790012e-06
+   4 6.5330790133e+01  -3.32e-01  2.76e-07    4.382764e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 65.3308
+rel. change during last iteration : -3.32181e-06
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.33329
+variance of residuals (reduced chisquare) = WSSR/ndf   : 5.44423
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.438276         +/- 32.28        (7366%)
+
+
+*******************************************************************************
+Sun Jun 17 12:22:58 2018
+
+
+FIT:    data read from "BacktrackingBasico.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x*fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.2651453802e+21   0.00e+00  9.87e+09    4.382764e-01
+   5 3.6869744710e+00  -3.62e-08  9.87e+04    1.042103e-10
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 3.68697
+rel. change during last iteration : -3.62188e-13
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.554299
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.307248
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.0421e-10       +/- 6.83e-12     (6.554%)
+
+
+*******************************************************************************
+Sun Jun 17 12:24:54 2018
+
+
+FIT:    data read from "BacktrackingPoda.dat"
+        format = z
+BREAK: bad data on line 1 of datafile
+
+*******************************************************************************
+Sun Jun 17 12:25:04 2018
+
+
+FIT:    data read from "BacktrackingPoda.dat"
+        format = z
+BREAK: bad data on line 1 of datafile
+
+*******************************************************************************
+Sun Jun 17 12:25:14 2018
+
+
+FIT:    data read from "BacktrackingPoda.dat"
+        format = z
+BREAK: bad data on line 1 of datafile
+
+*******************************************************************************
+Sun Jun 17 12:26:27 2018
+
+
+FIT:    data read from "BacktrackingPoda.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x*fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.5611670557e+04   0.00e+00  3.54e+01    1.042103e-10
+   3 2.4417359458e+02  -1.90e-02  3.54e-02    2.864188e-12
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 244.174
+rel. change during last iteration : -1.89712e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 4.51085
+variance of residuals (reduced chisquare) = WSSR/ndf   : 20.3478
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.86419e-12      +/- 3.688e-12    (128.8%)
+
+
+*******************************************************************************
+Sun Jun 17 12:28:54 2018
+
+
+FIT:    data read from "BranchAndBound.dat"
+        format = z
+        x range restricted to [-11.9746 : 34.9004]
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x*fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 9.0196276720e+32   0.00e+00  8.33e+15    2.864188e-12
+   6 6.3894571682e-01   0.00e+00  8.33e+12    3.724813e-28
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.638946
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.23075
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0532455
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 3.72481e-28      +/- 2.201e-29    (5.908%)
+
+
+*******************************************************************************
+Sun Jun 17 12:29:41 2018
+
+
+FIT:    data read from "BranchAndBound.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Sun Jun 17 12:29:54 2018
+
+
+FIT:    data read from "BranchAndBound.dat"
+        format = z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x*fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.0994756750e+56   0.00e+00  2.91e+27    1.000000e+00
+   1 5.6095697706e+53  -1.95e+07  2.91e+26    7.142857e-02
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 5.60957e+53
+rel. change during last iteration : -195
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.16209e+26
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.67464e+52
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0714286        +/- 0.02062      (28.87%)

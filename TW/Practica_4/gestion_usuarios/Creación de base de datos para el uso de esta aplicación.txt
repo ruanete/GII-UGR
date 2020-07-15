@@ -1,0 +1,20 @@
+//Genero base de datos si no existe:
+CREATE DATABASE IF NOT EXISTS usuarios;
+
+//Creacion tabla en base de datos (Usar un ENUM para comprobar el tipo_usuario mejor que un check)
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usuario` VARCHAR(100) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `apellidos` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `tipo_usuario` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`usuario`),
+  UNIQUE KEY `email` (`email`),
+  CHECK (`tipo_usuario` IN ('Normal','Administrador'))
+);
+
+//Creo un nuevo usuario
+CREATE USER 'raul'@'localhost' IDENTIFIED BY 'raul';
+GRANT ALL PRIVILEGES ON * . * TO 'raul'@'localhost';
+FLUSH PRIVILEGES;

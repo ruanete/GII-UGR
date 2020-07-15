@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}MUSICAL - Músicos{% endblock %}
+{% block body %}
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1 class="float-left">Músicos</h1>
+      </div>
+      <div class="col">
+        {% if not user.is_anonymous %}
+          <button onclick="location.href='/web_musical/musicos/new/'" type="button" class="btn btn-success float-right">Añadir músico</button>
+        {% endif %}
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Instrumento principal</th>
+            <th scope="col">Grupo</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for musico in musicos %}
+            <tr>
+              <td>{{ musico.nombre }}</td>
+              <td>{{ musico.fecha_nacimiento }}</td>
+              <td>{{ musico.instrumento_principal }}</td>
+              <td>{{ musico.grupos.all|join:", " }}</td>
+              <td class="float-right">
+                {% if not user.is_anonymous %}
+                  <button onclick="location.href='/web_musical/musicos/edit/{{musico.pk}}/'" type="button" class="btn btn-info">Editar</button>
+                  <button onclick="location.href='/web_musical/musicos/delete/{{musico.pk}}/'" type="button" class="btn btn-danger">Borrar</button>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<nav class="navigation">
+  <ul class="mainmenu">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/works">Trabajos</a></li>
+    {% if session["username"] %}
+      <li><a>Paginas visitadas</a>
+        <ul class="submenu">
+          <li><a href="{{ session['urls'][0] }}">Visitada 1</a></li>
+          <li><a href="{{ session['urls'][1] }}">Visitada 2</a></li>
+          <li><a href="{{ session['urls'][2] }}">Visitada 3</a></li>
+        </ul>
+      </li>
+    {% endif %}
+    <li><a href="/contact">Contacto</a></li>
+  </ul>
+</nav>

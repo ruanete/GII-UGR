@@ -1,0 +1,11 @@
+/bin/sed (GNU sed) 4.4
+Copyright © 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Escrito por Jay Fenlason, Tom Lord, Ken Pizzini,
+y Paolo Bonzini.
+Página web de sed de GNU: <http://www.gnu.org/software/sed/>.
+Ayuda general para usar software GNU: <http://www.gnu.org/gethelp/>.
+Correo-e del boletín de defectos a: <bug-sed@gnu.org>.

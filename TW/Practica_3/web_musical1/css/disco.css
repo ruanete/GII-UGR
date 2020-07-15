@@ -1,0 +1,21 @@
+h2{
+  text-align: center;
+  width: 250px;
+  background-color: black;
+  border: 2px solid;
+  border-color: #b3b3b3;
+  border-radius: 30px;
+  color: #e1c635;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.imagen{
+  padding: 4px;
+  width: 200px;
+  height:200px;
+}
+
+.imagen:hover{
+  background-color: green;
+}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %}MUSICAL - Grupos{% endblock %}
+{% block body %}
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1 class="float-left">Grupos</h1>
+      </div>
+      <div class="col">
+        {% if not user.is_anonymous %}
+          <button onclick="location.href='/web_musical/grupos/new/'" type="button" class="btn btn-success float-right">Añadir grupo</button>
+        {% endif %}
+      </div>
+    </div>
+    <input type='hidden' id='current_page' />
+	  <input type='hidden' id='show_per_page' />
+    <input type='hidden' id='total_items' />
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha de fundación</th>
+            <th scope="col">Estilo musical</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="content">
+          <!---{% for grupo in grupos %}
+            <tr>
+              <td>{{ grupo.nombre }}</td>
+              <td>{{ grupo.fecha_fundacion }}</td>
+              <td>{{ grupo.estilo }}</td>
+              <td class="float-right">
+                {% if not user.is_anonymous %}
+                  <button onclick="location.href='/web_musical/grupos/edit/{{grupo.pk}}/'" type="button" class="btn btn-info">Editar</button>
+                  <button onclick="location.href='/web_musical/grupos/delete/{{grupo.pk}}/'" type="button" class="btn btn-danger">Borrar</button>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}-->
+        </tbody>
+      </table>
+    </div>
+    <div id='page_navigation'></div>
+    <!--<div id='pages-pagination'></div>-->
+    <!--<nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+        <div id="pages-pagination"></div>
+        {% for pagina in total_paginas %}
+          <li class="page-item"><a class="page-link" href="#">{{pagina}}</a></li>
+        {% endfor %}
+        <li class="page-item">
+          <a class="page-link" href="#">Siguiente</a>
+        </li>
+      </ul>
+    </nav>-->
+  </div>
+{% endblock %}

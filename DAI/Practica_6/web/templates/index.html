@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}MUSICAL - Inicio{% endblock %}
+{% block body %}
+<div class="container">
+  {% if user.is_anonymous %}
+    <h2>Estas en la pagina de inicio y no estas conectado :(</h2>
+  {% else %}
+    <h2>Estas en la pagina de inicio y estas conectado :)</h2>
+  {% endif %}
+</div>
+{% endblock %}

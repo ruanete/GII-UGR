@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practica 4: PHP</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Formulario compra</legend>
+      <form action="./formulario_informacion.php" method="post">
+        <fieldset>
+          <legend>Información de la compra</legend>
+          <p>Nombre: <input type="text" name="nombre"/></p>
+          <p>Elije el producto que desea comprar:</p>
+          <input type="radio" name="producto" value="camisa" checked/>Camisa
+          <input type="radio" name="producto" value="pantalon"/>Pantalón
+          <input type="radio" name="producto" value="falda"/>Falda
+        </fieldset>
+        <p></p>
+        <input type="submit" value="Siguiente"/>
+        <!--<input type="reset" value="Limpiar formulario"/>-->
+      </form>
+    </fieldset>
+  </body>
+</html>

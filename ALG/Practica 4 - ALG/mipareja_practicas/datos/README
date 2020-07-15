@@ -1,0 +1,18 @@
+Existen dos ficheros de prueba para ejecutar nuestros programas:
+1) alumnos_small.txt: con 6 alumnos y 4 preguntas
+2) alumnos1.txt: con 10 individuos y 4 preguntas
+
+Otros fichero asociados a alumnos_small.txt son:
+ * alumnos_small_discrepancias.txt : contiene la matriz de discrepancias de los datos en alumnos_small.txt. Y las soluciones dadas
+ por voraces, backtracking, backtracking con poda y branch & bound.
+ 
+ * alumnos_small_debugbacktrackingpoda.txt: contiene datos parciales obtenidos por las diferentes iteraciones del algoritmo
+ backtracking con poda.
+ * alumnos_small_debugbranch_bound.txt:contiene datos parciales obtenidos por las diferentes iteraciones del algoritmo
+ branch & bound
+ 
+ 
+Para el fichero alumnos1.txt tenemos el fichero asociados alunos1_discrepancias.txt
+que contiene la matriz de discrepancias y los resultados obtenidos por las diferentes
+técnicas.
+

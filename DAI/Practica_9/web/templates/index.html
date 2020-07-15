@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}MUSICAL - Inicio{% endblock %}
+{% block body %}
+<div class="container">
+  {% if user.is_anonymous %}
+    <h2>Estas en la pagina de inicio y no estas conectado :(</h2>
+  {% else %}
+    <h2>Datos de la web</h2>
+    <div id="chart"></div>
+  {% endif %}
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'js/graphics.js' %}"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+{% endblock %}

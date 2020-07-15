@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Ruanete - Crear post{% endblock %}
+{% block body %}
+  {% if PostKey and PostTitle and PostText %}
+  <h2>Editar post</h2>
+  <form action="/createpostprocess" method="post">
+    <textarea class="form-control" name="key_post" style="display:none;">{{PostKey}}</textarea>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Titulo del post</label>
+      <input type="text" class="form-control" name="title_post" value="{{PostTitle}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Texto del post</label>
+      <textarea class="form-control" name="text_post">{{PostText}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar post</button>
+  </form>
+  {% else %}
+  <h2>Crear post</h2>
+  <form action="/createpostprocess" method="post">
+    <textarea class="form-control" name="key_post" style="display:none;"></textarea>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Titulo del post</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="title_post">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Texto del post</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text_post"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear post</button>
+  </form>
+  {% endif %}
+{% endblock %}

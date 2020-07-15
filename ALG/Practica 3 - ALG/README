@@ -1,0 +1,1 @@
+Si la compilación con el makefile no se puede ejecutar por fallos con los permisos, si se sacan los .cpp fuera de la carpeta y se compilan fuera uno a uno funciona. Es un problema que no he conseguido arreglar.

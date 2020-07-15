@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Ruanete - Registro{% endblock %}
+{% block body %}
+  {% if session["username"] %}
+    <h2>Perfil de usuario</h2>
+    <form action="/registerprocess" method="post">
+      Usuario:
+      <input type="text" name="username" value="{{ session["username"] }}"><br>
+      Contraseña:
+      <input type="text" name="password" value="{{ db[session["username"]] }}">
+      <br><br>
+      <input type="submit" value="Modificar usuario">
+      <button type="reset" value="Reiniciar">Borrar</button>
+    </form>
+  {% endif %}
+{% endblock %}

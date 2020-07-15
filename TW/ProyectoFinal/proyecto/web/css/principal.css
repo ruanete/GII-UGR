@@ -1,0 +1,86 @@
+table{
+  margin-top: 20%;
+  background-color: white;
+  text-align: center;
+  border-radius:5px solid #111;
+  border-collapse:collapse;
+}
+
+table th{
+  color: white;
+  border-radius: 0;
+  background-color: #d32f2f;
+}
+
+table td{
+  border-radius: 0;
+  background-color: #d32f2f;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+table tr{
+  color: white;
+}
+
+ul {
+  list-style-image:url('../img/disco_oro.gif');
+}
+
+h3 {
+  text-align: center;
+  width: 200px;
+  background-color: #d32f2f;
+  border: 2px solid;
+  border-color: #b3b3b3;
+  border-radius: 30px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table tr:hover td{
+  background-color:green;
+}
+
+#contenedor_principal{
+  width: 100%;
+  position: relative
+  height:auto;
+  overflow: hidden;
+  padding: 2px;
+  margin-bottom: 0;
+  border: 2px solid white;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+a img{
+  width: 100%;
+}
+
+.imagen{
+  padding: 1%;
+  width: 23%;
+  float: left;
+  padding-bottom: 0.5%;
+}
+
+.imagen:hover{
+  background-color: green;
+}
+
+.columnas{
+  display: flex;
+}
+
+.columna{
+  margin-right: 2%;
+  margin-left: 2%;
+}

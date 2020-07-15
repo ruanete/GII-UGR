@@ -1,0 +1,44 @@
+.seccion_web{
+  width: 12%;
+  margin: 0 auto;
+  background-color: #d32f2f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  padding: 6%;
+  padding-top: 5%;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+}
+
+html, body{
+   background-color: #26A69A;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+}
+
+input{
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  padding: 0 4px 0 4px;
+  height: 20px;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
+
+form p{
+  font-weight: bold;
+  color: white;
+}

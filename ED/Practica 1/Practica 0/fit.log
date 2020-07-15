@@ -1,0 +1,49 @@
+
+
+*******************************************************************************
+Fri Sep 29 16:55:53 2017
+
+
+FIT:    data read from 'efic.txt'
+        format = z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.20134e+22       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.02655e+10
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+c               = 1
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 2.28204e+07
+rel. change during last iteration : -2.44075e-08
+
+degrees of freedom    (FIT_NDF)                        : 35
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 807.472
+variance of residuals (reduced chisquare) = WSSR/ndf   : 652012
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 3.55259e-06      +/- 4.877e-08    (1.373%)
+b               = 0.0143477        +/- 0.01028      (71.64%)
+c               = -505.107         +/- 459.2        (90.92%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.973  1.000 
+c               0.796 -0.899  1.000 

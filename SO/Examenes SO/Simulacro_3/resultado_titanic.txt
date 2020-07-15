@@ -1,0 +1,5 @@
+Total personas: 714
+Media edad: 29
+Más joven: 0
+Más viejo: 80
+Menores de 5 años: 40

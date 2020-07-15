@@ -1,0 +1,59 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    {% if session["username"] %}
+      <h3>Bienvenido {{ session["username"] }}</h3>
+    {% else %}
+      <h3>Inicia sesión</h3>
+      <div class="login-container">
+        <form action="/login" method="post">
+          <input type="text" placeholder="Usuario" name="username">
+          <input type="text" placeholder="Contraseña" name="password">
+          <button type="submit"><i class="fas fa-sign-in-alt"></i></button>
+          <button onclick="location.href='/signup'" type="button"><i class="fas fa-user-plus"></i></button>
+        </form>
+      </div>
+    {% endif %}
+  </div>
+
+  <ul class="list-unstyled components sidebar1">
+    <!--<p>Páginas</p>-->
+    <li>
+      <a href="/" >Inicio</a>
+    </li>
+    {% if session["username"] %}
+    <li>
+      <a href="{{ url_for("userprofile") }}" >Perfil de usuario</a>
+    </li>
+    <li>
+      <a href="{{ url_for("createpost") }}" >Crear post</a>
+    </li>
+    {% endif %}
+    <li>
+      <a href="/works" >Trabajos</a>
+    </li>
+    {% if session["username"] %}
+    <li>
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas visitadas</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+            <a href="{{ session['urls'][0] }}">Visitada 1</a>
+          </li>
+          <li>
+            <a href="{{ session['urls'][1] }}">Visitada 2</a>
+          </li>
+          <li>
+            <a href="{{ session['urls'][2] }}">Visitada 3</a>
+          </li>
+        </ul>
+    </li>
+    {% endif %}
+    <li>
+      <a href="/contact">Contacto</a>
+    </li>
+    {% if session["username"] %}
+    <li>
+      <a href="{{ url_for("logout") }}">Cerrar sesión</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

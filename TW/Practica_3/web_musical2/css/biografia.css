@@ -1,0 +1,17 @@
+h3 {
+  text-align: center;
+  width: 120px;
+  background-color: black;
+  border: 2px solid;
+  border-color: #b3b3b3;
+  border-radius: 30px;
+  color: #e1c635;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+section img {
+  float: right;
+  width: 13%;
+  margin: 10px;
+}

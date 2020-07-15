@@ -1,0 +1,57 @@
+//CREACIÓN DE LA TABLA DE usuarios
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usuario` varchar(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `telefono` VARCHAR(20) NOT NULL,
+  `tipo_usuario` enum('Administrador','Gestor_Compras') NOT NULL,
+  PRIMARY KEY (`usuario`),
+  UNIQUE KEY `email` (`email`)
+);
+
+//CREACIÓN DEL PRIMER USUARIO Administrador
+
+insert into usuarios values ('admin','Raul','Ruano Narvaez','ruanete@correo.ugr.es','$2y$10$KIgtu6mAyAYuCNlDkisTyOyTcjkz3XhmBhrUtwmz2CMyl4/WGezAa','622222222','Administrador');
+
+mysqldump -u root -p nombre_base_de_datos > fichero.sql
+
+insert into usuarios values ('gpedidos','Raul','Ruano Narvaez','raulruanonarvaez@gmail.com','$2y$10$tZd0r762a0T9SdpaiaNUl.Kqe9IMqFQAAxPJbXc.va9MPa3q/xma2','622222222','Gestor_Compras');
+
+insert into usuarios values ('admin','Raul','Ruano Narvaez','ruanete@correo.ugr.es','$2y$10$KIgtu6mAyAYuCNlDkisTyOyTcjkz3XhmBhrUtwmz2CMyl4/WGezAa','622222222','Administrador');
+
+//CREACIÓN TABLA DE conciertos
+create table if not exists `conciertos`(
+  `codconcierto` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `fecha` DATE NOT NULL UNIQUE KEY,
+  `ciudad` varchar(100) NOT NULL,
+  `lugar` varchar(100) NOT NULL
+);
+
+insert into conciertos (fecha,ciudad,lugar) values(str_to_date('07-25-2012','%m-%d-%Y'),'Granada','Sala tren');
+
+//CREACIÓN TABLA DE log
+create table if not exists `logEventos`(
+  `codlog` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `descripcion` varchar(100) NOT NULL,
+  `fecha` DATETIME NOT NULL
+);
+
+insert into logEventos (descripcion,fecha) values('Prueba de evento',select now());
+
+//CREACIÓN TABLA DE pedidos
+create table if not exists `pedidos`(
+  `codped` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `fecha` DATETIME NOT NULL,
+  `estado` enum('Aceptado','Denegado','Pendiente') NOT NULL DEFAULT 'Pendiente',
+  `correoEnviado` varchar(100),
+  `motivoDenied` varchar(200),
+  `usuarioGestor` varchar(100),
+  `idDisco` int(11) NOT NULL,
+  FOREIGN KEY (usuarioGestor) REFERENCES usuarios(usuario),
+  FOREIGN KEY (idDisco) REFERENCES discos(id)
+);
+
+insert into pedidos (fecha, usuarioGestor, idDisco) values (now(),'gpedidos','2');

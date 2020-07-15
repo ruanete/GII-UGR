@@ -1,0 +1,26 @@
+/* Style the input field inside the navbar */
+.sidebar-header input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.sidebar-header .login-container button {
+  padding: 6px;
+  margin-top: 8px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-header .login-container button:hover {
+  background: #ccc;
+}
+
+.sidebar-header h3 {
+  text-align: center;
+}

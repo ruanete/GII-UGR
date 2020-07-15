@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Ruanete - Búsqueda{% endblock %}
+{% block body %}
+<h2>Resultados de la búsqueda</h2>
+
+
+{% for dict_item in blogPosts %}
+   <h2>{{blogPosts[dict_item][0]}}</h2>
+   <p>{{blogPosts[dict_item][1]}}</p>
+   {% if session["username"] %}
+   <button onclick="location.href='/deletepost/{{dict_item}}'" type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+   <button onclick="location.href='/editpost/{{dict_item}}'" type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+   {% endif %}
+   <hr/>
+{% endfor %}
+{% endblock %}

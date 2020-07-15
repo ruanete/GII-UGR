@@ -1,0 +1,23 @@
+<div class="topnav">
+  <img id="logo" src="static/img/logo.png">
+  <div class="titulo">
+    <p>RUANETE</p>
+    <p>Pagina inicial</p>
+  </div>
+  {% if session["username"] %}
+  <div class="logout-container">
+    <p><a href="{{ url_for("userprofile") }}">Perfil usuario</a></p>
+    <p><a href="{{ url_for("logout") }}">Cerrar sesión</a></p>
+    <h5>Bienvenido usuario {{ session["username"] }}</h5>
+  </div>
+  {% else %}
+  <div class="login-container">
+    <p><a href="{{ url_for("signup") }}">Registrarse</a></p>
+    <form action="{{ url_for('login') }}" method="post">
+      <input type="text" placeholder="Usuario" name="username">
+      <input type="text" placeholder="Contraseña" name="password">
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+  {% endif %}
+</div>

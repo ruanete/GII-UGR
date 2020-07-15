@@ -1,0 +1,39 @@
+body{
+  background-color: black;
+  font-family: 'Inconsolata';
+  color: white;
+  text-align: justify;
+}
+
+.estilo_base a{
+  font-family: 'Inconsolata';
+  font-size:16px;
+  text-decoration: none;
+  /*float:left;*/
+  padding: 10px;
+  color: #fff;
+}
+
+nav, footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3, h2, h4{
+  color: #e1c635;
+}
+
+hr{
+  height: 0px;
+  width: 50%;
+  background-color: white;
+}
+
+.estilo_base a:visited{
+  color: red;
+}
+
+.estilo_base a:hover {
+  background-color: #b3b3b3;
+}

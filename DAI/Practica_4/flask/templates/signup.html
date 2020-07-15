@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Ruanete - Registro{% endblock %}
+{% block body %}
+  <h2>Registro de usuario</h2>
+  <form action="/registerprocess" method="post">
+    Usuario:
+    <input type="text" name="username" ><br>
+    Contraseña:
+    <input type="text" name="password">
+    <br><br>
+    <input type="submit" value="Enviar">
+    <button type="reset" value="Reiniciar">Borrar</button>
+  </form>
+{% endblock %}

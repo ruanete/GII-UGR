@@ -1,0 +1,11 @@
+-En malla.h he comentado #include "textura.h"
+-Comentado clase cuadro en malla.cc y en .h
+-Comentado los objetos creados de cuadro en escena.c y escena.h
+-Comentado segundo constructor de cubo (que usa textura) en malla.cc
+-Comentado en cuadro y cubo de .h los vectores de verticesObjeto y verticesTextura
+-Comentado en objetoMallaIndexada en el .h el objeto Textura textura creado en la clase como atributo
+-Comentado en malla.cc en la linea 249 en el metodo draw la llamada a textura.activar()
+-Comentado en escena.h y escena.cc la creacion del objeto cubo_skybox
+
+ATENCION: Mover archivos de textura.h y textura.cc de la carpeta images a la carpeta principal
+Para volver al estado anterior

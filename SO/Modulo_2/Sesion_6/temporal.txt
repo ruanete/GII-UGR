@@ -1,0 +1,4 @@
+ejercicio1
+ejercicio1.c
+README.md
+temporal.txt

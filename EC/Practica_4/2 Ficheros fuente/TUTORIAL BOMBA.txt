@@ -1,0 +1,70 @@
+COMPILADO CON: gcc -Og bomba.c -o bomba -no-pie
+
+1) Ponemos breakpoints en main, compruebaPass con el comando: "b main" y "b compruebaPass", seguidamente
+de esto pones "run" y luego "n" (next) nos pedira la contraseña, ponemos una contraseña cualquiera si
+ponemos una contraseña de 11 caracteres nos ahorramos el tener que evitar la comprobación, pero si queremos
+evitar esta comparación vamos a realizarla de la siguiente manera, lo primero que tenemos que notar en la
+bomba es que hay un metodo que se llama longitudCadena que evidentemente lo que hace es calcular el tamaño
+de la cadena con un bucle while, vamos a notar este bucle y como el valor del registro rax va a aumentar
+hasta el total de caracteres de nuestra cadena, lo que vamos hacer es que cuando calcule el tamaño de nuestra
+cadena vamos a modificar este valor para que sea el mismo que la segunda ejecución de longitudCadena que esta
+ultima es el valor de la cadena de la contraseña real, por lo tanto lo primero que hacemos es ejecutar con
+"si" (stepi) ambos longitudCadena el que estan en compruebaPass+29 y el de compruebaPass+44 siendo este
+ultimo el de la password original y el primero el de nuestra contraseña, la que hemos metido.
+Si vemos en compruebaPass+34 hace un mov $eax, $r12d es decir mueve el valor de la longitud de nuestra pass
+al registro $r12d, ya sabemos donde esta el tamaño de nuestra cadena, ahora realizará el calculo de la longitud
+de la cadena con la password original, seguimos realizando "si" hasta llegar a compruebaPass+49 ahi nos quedamos
+parados y cambiamos el valor de $r12d al valor que tenga $eax en ese momento para que la comprobación
+de la longitud sea verdadera, aunque esta no la sea, la intención es saltarnos esta comprobacion. Cuando
+llegamos a compruebaPass+49 vemos que $eax tiene valor 11 y nuestro valor de nuestra contraseña metida
+esta en $r12d, si no hemos puesto una con el mismo tamaño lo que hacemos es modificar $r12d para, ello lo que
+hacemos es "set $r12d=11" con esto saltaremos la comprobacion de que las cadenas son iguales. Si vemos en
+compruebaPass+68 se comprueba que $eax y $r12d sean iguales, como ahora lo hemos cambiado son iguales por
+lo tanto sigue ejecutando el codigo. Seguimos ejecutando con "si" hasta llegar a compruebaPass+125 aqui lo
+que vemos que se comprueba es que el valor de $ecx es igual o no a "\n" (final de linea) cuando vemos
+en compruebaPass+120 que realiza movzbl 0x1(%rbx,%rdx,1),%ecx lo que hace es acceder a la posicion i+1
+de nuestro vector de contraseña que hemos insertado y comprueba si es o no un "\n" si no lo es sigue ejecutando
+si vemos en compruebaPass+125 se realiza cmp    $0xa,%cl siendo $cl el registro $ecx ya que si vemos su valor
+con p(int*)$ecx o p(int*)$cl vamos a ver el valor i+1 de nuestro vector sale como hexadecimal si vemos
+ese valor en una tabla ASCII vemos que corresponde a un caracter.
+En comprueba+143 si comprobamos el valor de $esi vemos que es otro caracter en hexadecimal, en este caso el
+de la password original. Si vemos en comprueba+109 suma dos y luego en compruebaPass+112 comprueba si el valor
+de $eax es el valor que tenemos en $r12d, es decir aqui lo que hace es un bucle que suma de 2 en 2, concretamente un
+for.
+
+Si vemos en <compruebaPass+139>    movzbl (%rbx,%rdx,1),%esi e imprimimos los registros %rbx, %rdx y %esi vamos a ver
+en el primero toda la contraseña completa que hemos insertado, en %rdx el valor de i del bucle for y en %esi el valor de
+el valor que ha sacado del vector de nuestra contraseña en concreto el de la posicion i+1
+
+Con movslq %eax,%rsi      mov    %cl,(%rdi,%rsi,1) que se encuentran en compruebaPass+130 y compruebaPass+133 vemos que en
+$eax tenemos el valor de i, lo pasa a $rsi en compruebaPass+130 y este $rsi es el que se usa para acceder con
+la operacion mov    %cl,(%rdi,%rsi,1) a la posicion i del vector nuestro ya que si imprimimos $rdi vemos que aparece nuestra
+contraseña pero con cada par de valores intercambiados, lo que deducimos que nuestra contraseña insertada se estan cambiando
+los valores, concretamente, cada par de valores se les da la vuelta, es decir, que si tenemos "hola" el resultado de esto es
+"ohal" luego lo que podemos ver que es un bucle que va a intercambiar los pares de elementos de nuestra contraseña
+insertada, esto nos servirá para entender el procedimiento que se realiza, por el momento sabemos que nuestra password
+es modificada para intercambiar pares de elementos. Si seguimos realizando si y vamos imprimiendo con p(char*)$rdi
+vamos a ver como se realiza lo que hemos dicho anteriormente, realizamos si hasta que $rax veamos que tenga el mismo valor que
+modificamos de primeras, en este caso era 11. En compruebaPass+139 y compruebaPass+143 podemos ver el otro intercambio
+uno con i y otro con i+1.
+
+Cuando ya hemos llegado a compruebaPass+174 vemos que es una llamada a strncmp muy curiosa que si imprimimos el valor de password
+concretamente lo que pone en la linea <compruebaPass+167>    lea    0x200816(%rip),%rsi        # 0x601070 <password> es decir
+hacemos p (char*) 0x601070 vamos a ver "baeralobbma\n" parece que esto es la contraseña y asi es pero como nos dimos cuenta antes
+que en nuestra contraseña insertada ibamos intercambiando los valores pares, podemos darnos cuenta que lo que realmente se almacena
+en password es la contraseña original con los pares cambiados, luego si intercambiamos los pares nosotros de la palabra "baeralobbma"
+nos queda la palabra "abrelabomba", luego podemos deducir que esta es la contraseña y que lo que hace el programa es coger
+nuestra contraseña, cambiar los pares y comprobar que es igual a la contraseña original con los pares cambiados guardada en password.
+
+Ya tenemos la contraseña luego ahora para mayor facilidad ejecutamos la bomba con gdb de nuevo y ponemos los siguiente breakpoints:
+  b main
+  b *main+220
+Ejecutamos con run, ponemos luego "n" (next) ponemos la contraseña que encontramos antes "abrelabomba" luego en el pin ponemos por ejemplo
+"1234" como prueba y pulsamos enter y ahora con si vamos hasta la instrucción main+226 en la que vemos una resta de $eax y $0x1c0e=7182
+el valor en decimal es 7182, simplemente usando una calculadora podemos calcular en decimal ese numero que estaba en hexadecimal, luego vemos
+que $eax se le resta 7182, y en $eax podemos ver que hay un valor y ese valor es 0x23db=9179 luego vemos que a 9179 se le resta 7182 y el valor se
+almacena luego en $eax el cual es "1997" ya que si pasamos a la posicion main+231 y comprobamos $eax vemos que toma el valor de 1997 es decir
+la resta que hemos dicho antes, luego en main+231 se compara $eax con 0xc(%rsp) comprobamos el valor que hay en 0xc($rsp) con p*(int*)(0xc+$rsp)
+y podemos ver que sale el pin que hemos introducido nosotros, luego podemos ver que entonces "1997" es el pin de la bomba.
+
+Si ejecutamos de nuevo y ponemos como contraseña "abrelabomba" y el pin "1997" desbloquearemos la bomba.

@@ -1,0 +1,37 @@
+<?php
+  require_once('base_web.php');
+  cabecera("disco");
+?>
+
+<div class="seccion_web">
+  <article>
+    <section>
+      <h2>C.Tangana, Dellafuente - Guerrera</h2>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zceHYnOj8V4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+      <p>Guerrera introduce un nuevo registro, ni más Tangana ni más Della, que va hacia un universo paralelo e inexplorado.
+        “Lo que se esperaba de Dellafuente y yo era otra cosa, no esto. Es algo que no había hecho nadie del rollo urbano en general
+        y demuestra que, desde ese registro y sin la ayuda de nadie más, podemos hacer algo que suene a ahora, que esté fresco y que
+        le guste a todo tipo de gente. Es una seña más de que no es un nicho marginal, sino que lo que nosotros hacemos es música',
+        señala el triple disco platino por Mala Mujer.
+      </p>
+
+      <p>Ambos artistas camaleónicos se han pasado la cultura del DIY en advanced level, así como demostrado versatilidad en estilos
+        y registros. Tangana, cambiando y sorprendiendo. Della, introduciendo sonidos más allá del autotune y los quejíos. Ahí la adicción
+        y el nuevo tema ya es la canción más ambiciosa de El Chino, así como la más escuchable para la gran masa. Un 4x4 de fondo en la
+        que se yuxtapone el cante de “un registro R'N'B meloso”, de amor, que es lo único eterno.
+      </p>
+
+      <p>Una fusión con aires de house, mainstream y romanticismo que, esta vez, no incluye ningún guiño a otros artistas ni hay uno más
+        rapero que otro. “El tema es más pop que otra cosa, música que tiene los códigos que todo el mundo puede entender", sentencia Tangana.
+        Una canción que habla de una mujer fuerte y valiente que puede con todo. De una de esas princesas guerreras como Mulán o Xena luchando
+        en una escena de Kill Bill. Según Tangana, “yo me imaginé cuando me atrae una chica fuerte y escribí en base a eso".
+      </p>
+
+      <div class="imagen"><a title="Pulsa para escuchar C.Tangana, Dellafuente - Guerrera" href="https://open.spotify.com/album/2qx3hMFjEnHK41oQ0kHqwW"><img src="./img/sencillo_guerrera_ctangana.jpg" alt="C.Tangana, Dellafuente - Guerrera" width="200"/></a></div>
+    </section>
+  </article>
+</div>
+
+<?php pieDePagina()?>
